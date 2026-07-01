@@ -798,6 +798,188 @@
     color: #888;
   }
 
+  .bmi-row {
+    background: linear-gradient(135deg, #f0f4ff 0%, #f7f0ff 100%);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bmi-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .bmi-label {
+    font-size: 13px;
+    color: #667eea;
+    font-weight: 600;
+  }
+
+  .bmi-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .bmi-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+  }
+
+  .bmi-desc {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .bmi-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #f0f4ff 0%, #f7f0ff 100%);
+    border-radius: 12px;
+  }
+
+  .bmi-big-value {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bmi-big-tag {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: white;
+  }
+
+  .bmi-bar-container {
+    margin-bottom: 16px;
+  }
+
+  .bmi-bar {
+    position: relative;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 6px;
+  }
+
+  .bmi-bar-segment {
+    height: 100%;
+  }
+
+  .bmi-bar-marker {
+    position: absolute;
+    top: -3px;
+    width: 4px;
+    height: 16px;
+    background: #333;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 2px white, 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .bmi-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #888;
+    margin-bottom: 2px;
+  }
+
+  .bmi-bar-values {
+    position: relative;
+    font-size: 9px;
+    color: #BBB;
+  }
+
+  .bmi-bar-values span {
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  .bmi-bar-values span:nth-child(1) { left: 25%; }
+  .bmi-bar-values span:nth-child(2) { left: 60%; }
+  .bmi-bar-values span:nth-child(3) { left: 80%; }
+
+  .bmi-guide {
+    background: #FAFAFA;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+
+  .bmi-guide-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .bmi-guide-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bmi-guide-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .bmi-guide-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .bmi-guide-label {
+    font-weight: 600;
+    color: #333;
+    width: 36px;
+    flex-shrink: 0;
+  }
+
+  .bmi-guide-range {
+    color: #666;
+    width: 78px;
+    flex-shrink: 0;
+  }
+
+  .bmi-guide-desc {
+    color: #999;
+    font-size: 10px;
+  }
+
+  .bmi-tip {
+    background: #FFF7E6;
+    border-left: 3px solid #FAAD14;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+  }
+
   .chart-container {
     width: 100%;
     height: 140px;
@@ -853,6 +1035,16 @@
   .weight-history-val .weight-delta.up { color: #FF6B6B; }
   .weight-history-val .weight-delta.down { color: #4ECDC4; }
 
+  .weight-bmi-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 8px;
+    color: white;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
   /* ===== 我的页 ===== */
   .profile-header {
     text-align: center;
@@ -880,6 +1072,33 @@
   .profile-desc {
     font-size: 13px;
     color: #888;
+    margin-top: 2px;
+  }
+
+  .profile-body-stats {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: center;
+  }
+
+  .body-stat {
+    background: rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 8px 14px;
+    text-align: center;
+    min-width: 60px;
+  }
+
+  .body-stat-val {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .body-stat-label {
+    font-size: 10px;
+    color: rgba(255,255,255,0.8);
     margin-top: 2px;
   }
 
@@ -1291,6 +1510,70 @@
         </div>
       </div>
 
+      <!-- BMI 分析 -->
+      <div class="card" id="bmiCard" style="display:none;">
+        <div class="card-title">
+          <span class="icon">📏</span>
+          <span>BMI 身体质量指数</span>
+        </div>
+        <div class="bmi-main">
+          <div class="bmi-big-value">
+            <span id="bmiBigValue">--</span>
+          </div>
+          <div class="bmi-big-tag" id="bmiBigTag">--</div>
+        </div>
+        <div class="bmi-bar-container">
+          <div class="bmi-bar">
+            <div class="bmi-bar-segment" style="width:25%;background:#4ECDC4;" title="偏瘦"></div>
+            <div class="bmi-bar-segment" style="width:35%;background:#52C41A;" title="正常"></div>
+            <div class="bmi-bar-segment" style="width:20%;background:#FAAD14;" title="超重"></div>
+            <div class="bmi-bar-segment" style="width:20%;background:#FF6B6B;" title="肥胖"></div>
+            <div class="bmi-bar-marker" id="bmiMarker" style="left:50%;"></div>
+          </div>
+          <div class="bmi-bar-labels">
+            <span>偏瘦</span>
+            <span>正常</span>
+            <span>超重</span>
+            <span>肥胖</span>
+          </div>
+          <div class="bmi-bar-values">
+            <span>18.5</span>
+            <span>24</span>
+            <span>28</span>
+          </div>
+        </div>
+        <div class="bmi-guide">
+          <div class="bmi-guide-title">💡 BMI 参考标准（中国成人）</div>
+          <div class="bmi-guide-list">
+            <div class="bmi-guide-item">
+              <span class="bmi-guide-dot" style="background:#4ECDC4;"></span>
+              <span class="bmi-guide-label">偏瘦</span>
+              <span class="bmi-guide-range">BMI &lt; 18.5</span>
+              <span class="bmi-guide-desc">建议增肌，加强力量训练和营养摄入</span>
+            </div>
+            <div class="bmi-guide-item">
+              <span class="bmi-guide-dot" style="background:#52C41A;"></span>
+              <span class="bmi-guide-label">正常</span>
+              <span class="bmi-guide-range">18.5 ≤ BMI &lt; 24</span>
+              <span class="bmi-guide-desc">标准身材，继续保持运动和健康饮食</span>
+            </div>
+            <div class="bmi-guide-item">
+              <span class="bmi-guide-dot" style="background:#FAAD14;"></span>
+              <span class="bmi-guide-label">超重</span>
+              <span class="bmi-guide-range">24 ≤ BMI &lt; 28</span>
+              <span class="bmi-guide-desc">建议增加有氧运动，控制饮食热量</span>
+            </div>
+            <div class="bmi-guide-item">
+              <span class="bmi-guide-dot" style="background:#FF6B6B;"></span>
+              <span class="bmi-guide-label">肥胖</span>
+              <span class="bmi-guide-range">BMI ≥ 28</span>
+              <span class="bmi-guide-desc">建议制定减脂计划，结合有氧和力量训练</span>
+            </div>
+          </div>
+        </div>
+        <div class="bmi-tip" id="bmiTip"></div>
+      </div>
+
       <!-- 部位分布 -->
       <div class="card">
         <div class="card-title">
@@ -1349,6 +1632,20 @@
         <div class="profile-avatar">💪</div>
         <div class="profile-name">健身达人</div>
         <div class="profile-desc" id="profileDesc">坚持就是胜利</div>
+        <div class="profile-body-stats" id="profileBodyStats" style="display:none;">
+          <div class="body-stat">
+            <div class="body-stat-val" id="profileHeight">--</div>
+            <div class="body-stat-label">身高</div>
+          </div>
+          <div class="body-stat">
+            <div class="body-stat-val" id="profileWeight">--</div>
+            <div class="body-stat-label">体重</div>
+          </div>
+          <div class="body-stat">
+            <div class="body-stat-val" id="profileBMI">--</div>
+            <div class="body-stat-label">BMI</div>
+          </div>
+        </div>
       </div>
 
       <!-- 成就徽章 -->
@@ -1458,7 +1755,10 @@
       <div id="modalBody"></div>
       <div class="modal-buttons">
         <button class="modal-btn cancel" id="modalClose">关闭</button>
-        <button class="modal-btn confirm" id="modalDelete" style="background:linear-gradient(135deg,#ff6b6b 0%,#ee5a6f 100%);">删除记录</button>
+        <button class="modal-btn confirm" id="modalEdit">编辑</button>
+      </div>
+      <div class="modal-buttons" style="margin-top:8px;" id="deleteBtnRow">
+        <button class="modal-btn cancel" id="modalDelete" style="background:linear-gradient(135deg,#ff6b6b 0%,#ee5a6f 100%);color:white;width:100%;">删除记录</button>
       </div>
     </div>
   </div>
@@ -1467,6 +1767,10 @@
   <div class="modal-overlay" id="goalModal">
     <div class="modal">
       <h3>🎯 目标设置</h3>
+      <div class="modal-row">
+        <div class="modal-label">身高 (cm)</div>
+        <input type="number" class="modal-input" id="goalHeight" placeholder="例如：170" step="0.1">
+      </div>
       <div class="modal-row">
         <div class="modal-label">目标体重 (kg)</div>
         <input type="number" class="modal-input" id="goalWeight" placeholder="例如：60" step="0.1">
@@ -1478,6 +1782,78 @@
       <div class="modal-buttons">
         <button class="modal-btn cancel" id="goalCancel">取消</button>
         <button class="modal-btn confirm" id="goalSave">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 编辑弹窗 -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal" style="max-width:360px;max-height:85vh;overflow-y:auto;">
+      <h3 id="editModalTitle">编辑训练记录</h3>
+      <div class="modal-row">
+        <div class="modal-label" id="editModalDate" style="text-align:center;color:#667eea;font-weight:500;"></div>
+      </div>
+
+      <div class="section-label" style="margin-bottom:6px;">快速组合</div>
+      <div class="tag-group" id="editComboTags" style="margin-bottom:10px;">
+        <button class="combo-tag" data-combo="push">推日</button>
+        <button class="combo-tag" data-combo="pull">拉日</button>
+        <button class="combo-tag" data-combo="leg">腿臀</button>
+        <button class="combo-tag" data-combo="upper">上肢</button>
+        <button class="combo-tag" data-combo="full">全身</button>
+      </div>
+
+      <div class="section-label mt-14" style="margin-bottom:6px;">力量部位</div>
+      <div class="tag-group" id="editMuscleTags" style="margin-bottom:10px;">
+        <button class="muscle-tag" data-tag="chest" data-color="#FF6B6B">
+          <span class="tag-dot" style="background:#FF6B6B"></span>胸
+        </button>
+        <button class="muscle-tag" data-tag="back" data-color="#4ECDC4">
+          <span class="tag-dot" style="background:#4ECDC4"></span>背
+        </button>
+        <button class="muscle-tag" data-tag="shoulder" data-color="#FFE66D">
+          <span class="tag-dot" style="background:#FFE66D"></span>肩
+        </button>
+        <button class="muscle-tag" data-tag="arm" data-color="#95E1D3">
+          <span class="tag-dot" style="background:#95E1D3"></span>臂
+        </button>
+        <button class="muscle-tag" data-tag="leg" data-color="#A06CD5">
+          <span class="tag-dot" style="background:#A06CD5"></span>腿
+        </button>
+        <button class="muscle-tag" data-tag="glute" data-color="#F38181">
+          <span class="tag-dot" style="background:#F38181"></span>臀
+        </button>
+        <button class="muscle-tag" data-tag="core" data-color="#FF9F43">
+          <span class="tag-dot" style="background:#FF9F43"></span>核心
+        </button>
+      </div>
+
+      <div class="section-label mt-14" style="margin-bottom:6px;">有氧</div>
+      <div class="tag-group" id="editCardioTags" style="margin-bottom:10px;">
+        <button class="cardio-tag" data-tag="running">🏃 跑步</button>
+        <button class="cardio-tag" data-tag="swim">🏊 游泳</button>
+        <button class="cardio-tag" data-tag="cycle">🚴 骑行</button>
+        <button class="cardio-tag" data-tag="hiit">🔥 HIIT</button>
+        <button class="cardio-tag" data-tag="jump">⏰ 跳绳</button>
+        <button class="cardio-tag" data-tag="elliptical">⚙️ 椭圆机</button>
+      </div>
+
+      <div class="section-label mt-14" style="margin-bottom:6px;">训练动作</div>
+      <div class="exercise-list" id="editExerciseList"></div>
+      <button class="add-exercise-btn" id="editAddExerciseBtn" style="margin-top:6px;">
+        <span>+</span><span>添加动作</span>
+      </button>
+
+      <textarea
+        class="workout-textarea"
+        id="editWorkoutInput"
+        placeholder="记录训练感受或备注..."
+        style="margin-top:10px;min-height:60px;"
+      ></textarea>
+
+      <div class="modal-buttons" style="margin-top:14px;">
+        <button class="modal-btn cancel" id="editCancel">取消</button>
+        <button class="modal-btn confirm" id="editSave">保存</button>
       </div>
     </div>
   </div>
@@ -1664,6 +2040,7 @@
     if (tab === 'me') {
       updateGoalDisplay();
       checkAchievements();
+      updateProfileBodyStats();
     }
   }
 
@@ -1736,7 +2113,13 @@
     for (var i = startWeekday - 1; i >= 0; i--) {
       var cell = document.createElement('div');
       cell.className = 'day-cell other-month';
-      cell.innerHTML = '<div class="day-num">' + (prevLast - i) + '</div><div class="muscle-dots"></div>';
+      var prevD = prevLast - i;
+      var prevDateObj = new Date(viewYear, viewMonth - 1, prevD);
+      var prevDateKey = formatDateKey(prevDateObj);
+      cell.innerHTML = '<div class="day-num">' + prevD + '</div><div class="muscle-dots"></div>';
+      (function(dk, dobj) {
+        cell.addEventListener('click', function() { showDetail(dk, dobj); });
+      })(prevDateKey, prevDateObj);
       grid.appendChild(cell);
     }
 
@@ -1773,7 +2156,12 @@
     for (var j = 1; j <= rem; j++) {
       var c2 = document.createElement('div');
       c2.className = 'day-cell other-month';
+      var nextDateObj = new Date(viewYear, viewMonth + 1, j);
+      var nextDateKey = formatDateKey(nextDateObj);
       c2.innerHTML = '<div class="day-num">' + j + '</div><div class="muscle-dots"></div>';
+      (function(dk, dobj) {
+        c2.addEventListener('click', function() { showDetail(dk, dobj); });
+      })(nextDateKey, nextDateObj);
       grid.appendChild(c2);
     }
   }
@@ -1795,8 +2183,12 @@
     if (!record || !record.checked) {
       html = '<div class="empty-state"><div class="empty-icon">📝</div><div>当天没有训练记录</div></div>';
       document.getElementById('modalDelete').style.display = 'none';
+      document.getElementById('deleteBtnRow').style.display = 'none';
+      document.getElementById('modalEdit').textContent = '补打卡';
     } else {
       document.getElementById('modalDelete').style.display = '';
+      document.getElementById('deleteBtnRow').style.display = '';
+      document.getElementById('modalEdit').textContent = '编辑';
 
       var tags = '';
       if (record.muscles && record.muscles.length) {
@@ -2167,6 +2559,7 @@
     if (list.length === 0) {
       curEl.textContent = maxEl.textContent = minEl.textContent = chgEl.textContent = '--';
       chgEl.className = 'weight-stat-val';
+      document.getElementById('bmiRow').style.display = 'none';
       return;
     }
 
@@ -2188,6 +2581,49 @@
     } else {
       chgEl.textContent = '--';
       chgEl.className = 'weight-stat-val';
+    }
+
+    var s = getSettings();
+    var bmiCard = document.getElementById('bmiCard');
+    if (s.height && list.length > 0) {
+      var bmi = calcBMI(latest.weight, s.height);
+      var level = getBMILevel(bmi);
+
+      document.getElementById('bmiBigValue').textContent = bmi;
+      var bigTag = document.getElementById('bmiBigTag');
+      bigTag.textContent = level.label;
+      bigTag.style.background = level.color;
+
+      var markerPos = 0;
+      if (bmi < 15) markerPos = 5;
+      else if (bmi > 32) markerPos = 95;
+      else {
+        if (bmi < 18.5) {
+          markerPos = (bmi - 15) / 3.5 * 25;
+        } else if (bmi < 24) {
+          markerPos = 25 + (bmi - 18.5) / 5.5 * 35;
+        } else if (bmi < 28) {
+          markerPos = 60 + (bmi - 24) / 4 * 20;
+        } else {
+          markerPos = 80 + Math.min((bmi - 28) / 4 * 20, 20);
+        }
+      }
+      document.getElementById('bmiMarker').style.left = markerPos + '%';
+
+      var tip = '';
+      var s2 = getSettings();
+      if (s2.goalWeight) {
+        var goalBMI = calcBMI(s2.goalWeight, s.height);
+        var goalLevel = getBMILevel(goalBMI);
+        tip = '🎯 目标体重 ' + s2.goalWeight + 'kg → 目标BMI ' + goalBMI + '（' + goalLevel.label + '）';
+      } else {
+        tip = '💡 去「我的」页面设置目标体重，查看目标BMI';
+      }
+      document.getElementById('bmiTip').textContent = tip;
+
+      bmiCard.style.display = 'block';
+    } else {
+      bmiCard.style.display = 'none';
     }
   }
 
@@ -2300,6 +2736,7 @@
       return;
     }
 
+    var s = getSettings();
     var rev = list.slice().reverse();
     var recent = rev.slice(0, 7);
     var html = '<div class="weight-history-list">';
@@ -2319,9 +2756,16 @@
         }
       }
 
+      var bmiHtml = '';
+      if (s.height) {
+        var bmi = calcBMI(item.weight, s.height);
+        var level = getBMILevel(bmi);
+        bmiHtml = '<span class="weight-bmi-tag" style="background:' + level.color + '">BMI ' + bmi + '</span>';
+      }
+
       html += '<div class="weight-history-item" data-date="' + item.date + '">';
       html += '<span class="weight-history-date">' + ds + '</span>';
-      html += '<span class="weight-history-val">' + item.weight.toFixed(1) + ' kg' + delta + '</span>';
+      html += '<span class="weight-history-val">' + item.weight.toFixed(1) + ' kg ' + bmiHtml + delta + '</span>';
       html += '</div>';
     }
     html += '</div>';
@@ -2462,6 +2906,27 @@
     document.getElementById('monthTotalSets').textContent = setCount;
   }
 
+  // ========== 个人资料身体数据 ==========
+  function updateProfileBodyStats() {
+    var s = getSettings();
+    var statsEl = document.getElementById('profileBodyStats');
+    if (!s.height) {
+      statsEl.style.display = 'none';
+      return;
+    }
+    var wlist = getWeightList();
+    if (wlist.length === 0) {
+      statsEl.style.display = 'none';
+      return;
+    }
+    var latest = wlist[wlist.length - 1];
+    var bmi = calcBMI(latest.weight, s.height);
+    document.getElementById('profileHeight').textContent = s.height + 'cm';
+    document.getElementById('profileWeight').textContent = latest.weight.toFixed(1) + 'kg';
+    document.getElementById('profileBMI').textContent = bmi;
+    statsEl.style.display = 'flex';
+  }
+
   // ========== 成就 ==========
   function checkAchievements() {
     var data = getData();
@@ -2515,16 +2980,34 @@
   }
 
   // ========== 目标设置 ==========
+  function calcBMI(weight, height) {
+    if (!weight || !height) return null;
+    var h = parseFloat(height) / 100;
+    var w = parseFloat(weight);
+    if (h <= 0 || w <= 0) return null;
+    return Math.round((w / (h * h)) * 10) / 10;
+  }
+
+  function getBMILevel(bmi) {
+    if (bmi === null) return { label: '-', color: '#999', desc: '未设置身高' };
+    if (bmi < 18.5) return { label: '偏瘦', color: '#4ECDC4', desc: '偏瘦，建议增肌' };
+    if (bmi < 24) return { label: '正常', color: '#52C41A', desc: '标准身材，继续保持！' };
+    if (bmi < 28) return { label: '超重', color: '#FAAD14', desc: '稍微超重，注意运动和饮食' };
+    return { label: '肥胖', color: '#FF6B6B', desc: '建议制定减脂计划' };
+  }
+
   function updateGoalDisplay() {
     var s = getSettings();
     var parts = [];
+    if (s.height) parts.push('身高 ' + s.height + 'cm');
     if (s.goalWeight) parts.push('目标体重 ' + s.goalWeight + 'kg');
     if (s.goalMonthly) parts.push('每月 ' + s.goalMonthly + ' 天');
-    document.getElementById('goalValue').textContent = parts.length ? parts.join(' · ') : '点击设置体重和月度目标';
+    document.getElementById('goalValue').textContent = parts.length ? parts.join(' · ') : '点击设置身高和目标';
   }
 
   function showGoalModal() {
     var s = getSettings();
+    document.getElementById('goalHeight').value = s.height || '';
     document.getElementById('goalWeight').value = s.goalWeight || '';
     document.getElementById('goalMonthly').value = s.goalMonthly || '';
     document.getElementById('goalModal').classList.add('show');
@@ -2536,11 +3019,13 @@
 
   function saveGoal() {
     var s = getSettings();
+    s.height = document.getElementById('goalHeight').value.trim();
     s.goalWeight = document.getElementById('goalWeight').value.trim();
     s.goalMonthly = document.getElementById('goalMonthly').value.trim();
     saveSettings(s);
     hideGoalModal();
     updateGoalDisplay();
+    updateWeightStats();
   }
 
   // ========== 确认弹窗 ==========
@@ -2674,9 +3159,255 @@
 
     document.getElementById('modalClose').addEventListener('click', hideDetail);
     document.getElementById('modalDelete').addEventListener('click', deleteRecord);
+    document.getElementById('modalEdit').addEventListener('click', openEditModal);
     document.getElementById('detailModal').addEventListener('click', function(e) {
       if (e.target === this) hideDetail();
     });
+
+    var editSelectedMuscles = [];
+    var editSelectedCardio = [];
+    var editExercises = [];
+    var editingDateKey = null;
+
+    function openEditModal() {
+      if (!selectedDetailDate) return;
+      editingDateKey = selectedDetailDate;
+      hideDetail();
+      var data = getData();
+      var record = data[editingDateKey];
+
+      editSelectedMuscles = (record && record.muscles) ? record.muscles.slice() : [];
+      editSelectedCardio = (record && record.cardio) ? record.cardio.slice() : [];
+      editExercises = (record && record.exercises) ? JSON.parse(JSON.stringify(record.exercises)) : [];
+
+      document.getElementById('editWorkoutInput').value = (record && record.content) ? record.content : '';
+
+      var dateParts = editingDateKey.split('-');
+      var dateObj = new Date(parseInt(dateParts[0]), parseInt(dateParts[1]) - 1, parseInt(dateParts[2]));
+      var dateStr = (dateObj.getMonth() + 1) + '月' + dateObj.getDate() + '日';
+      var wds = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+      dateStr += ' ' + wds[dateObj.getDay()];
+      document.getElementById('editModalDate').textContent = dateStr;
+      document.getElementById('editModalTitle').textContent = (record && record.checked) ? '编辑训练记录' : '补打卡';
+
+      updateEditMuscleTags();
+      updateEditCardioTags();
+      renderEditExerciseList();
+
+      document.getElementById('editModal').classList.add('show');
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.remove('show');
+      editingDateKey = null;
+      editSelectedMuscles = [];
+      editSelectedCardio = [];
+      editExercises = [];
+    }
+
+    function updateEditMuscleTags() {
+      var tags = document.querySelectorAll('#editMuscleTags .muscle-tag');
+      for (var i = 0; i < tags.length; i++) {
+        var t = tags[i];
+        var key = t.getAttribute('data-tag');
+        if (editSelectedMuscles.indexOf(key) >= 0) {
+          t.classList.add('active');
+        } else {
+          t.classList.remove('active');
+        }
+      }
+    }
+
+    function updateEditCardioTags() {
+      var tags = document.querySelectorAll('#editCardioTags .cardio-tag');
+      for (var i = 0; i < tags.length; i++) {
+        var t = tags[i];
+        var key = t.getAttribute('data-tag');
+        if (editSelectedCardio.indexOf(key) >= 0) {
+          t.classList.add('active');
+        } else {
+          t.classList.remove('active');
+        }
+      }
+    }
+
+    function toggleEditMuscle(tag) {
+      var idx = editSelectedMuscles.indexOf(tag);
+      if (idx >= 0) {
+        editSelectedMuscles.splice(idx, 1);
+      } else {
+        editSelectedMuscles.push(tag);
+        if (editExercises.length === 0) {
+          addEditExercise(tag);
+          renderEditExerciseList();
+        }
+      }
+      updateEditMuscleTags();
+    }
+
+    function toggleEditCardio(tag) {
+      var idx = editSelectedCardio.indexOf(tag);
+      if (idx >= 0) {
+        editSelectedCardio.splice(idx, 1);
+      } else {
+        editSelectedCardio.push(tag);
+      }
+      updateEditCardioTags();
+    }
+
+    function applyEditCombo(combo) {
+      var map = {
+        push: ['chest', 'shoulder', 'arm'],
+        pull: ['back', 'arm'],
+        leg: ['leg', 'glute', 'core'],
+        upper: ['chest', 'back', 'shoulder', 'arm'],
+        full: ['chest', 'back', 'shoulder', 'arm', 'leg', 'glute', 'core']
+      };
+      editSelectedMuscles = (map[combo] || []).slice();
+      editExercises = [];
+      for (var i = 0; i < editSelectedMuscles.length; i++) {
+        addEditExercise(editSelectedMuscles[i]);
+      }
+      updateEditMuscleTags();
+      renderEditExerciseList();
+    }
+
+    function addEditExercise(muscleKey) {
+      var name = '';
+      if (muscleKey && MUSCLE_MAP[muscleKey]) {
+        var examples = MUSCLE_MAP[muscleKey].examples;
+        name = examples[0] || (MUSCLE_MAP[muscleKey].name + '训练');
+      } else {
+        name = '动作' + (editExercises.length + 1);
+      }
+      editExercises.push({
+        name: name,
+        sets: [{ weight: '', reps: '' }, { weight: '', reps: '' }, { weight: '', reps: '' }]
+      });
+    }
+
+    function renderEditExerciseList() {
+      var list = document.getElementById('editExerciseList');
+      if (!list) return;
+      if (!editExercises || editExercises.length === 0) {
+        list.innerHTML = '<div class="empty-state" style="padding:14px 0;"><div class="empty-icon" style="font-size:30px;">🏋️</div><div>还没有添加动作</div></div>';
+        return;
+      }
+      var html = '';
+      for (var i = 0; i < editExercises.length; i++) {
+        var ex = editExercises[i];
+        html += '<div class="exercise-item" data-idx="' + i + '">';
+        html += '<div class="exercise-header">';
+        html += '<div class="exercise-name" contenteditable="true" data-field="name">' + escapeHtml(ex.name || '动作' + (i+1)) + '</div>';
+        html += '<button class="exercise-delete" data-idx="' + i + '">×</button>';
+        html += '</div>';
+        html += '<div class="sets-row">';
+        var sets = ex.sets || [];
+        for (var s = 0; s < 3; s++) {
+          var set = sets[s] || { weight: '', reps: '' };
+          html += '<div class="set-col">';
+          html += '<input type="number" class="set-input" data-set-idx="' + s + '" data-field="weight" value="' + (set.weight || '') + '" placeholder="--">';
+          html += '<div class="set-label">重量</div>';
+          html += '</div>';
+          html += '<div class="set-col">';
+          html += '<input type="number" class="set-input" data-set-idx="' + s + '" data-field="reps" value="' + (set.reps || '') + '" placeholder="--">';
+          html += '<div class="set-label">次</div>';
+          html += '</div>';
+        }
+        html += '</div>';
+        html += '</div>';
+      }
+      list.innerHTML = html;
+
+      var delBtns = list.querySelectorAll('.exercise-delete');
+      for (var d = 0; d < delBtns.length; d++) {
+        (function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var idx = parseInt(btn.getAttribute('data-idx'));
+            editExercises.splice(idx, 1);
+            renderEditExerciseList();
+          });
+        })(delBtns[d]);
+      }
+
+      var nameDivs = list.querySelectorAll('.exercise-name');
+      for (var n = 0; n < nameDivs.length; n++) {
+        (function(div, idx) {
+          div.addEventListener('blur', function() {
+            if (editExercises[idx]) editExercises[idx].name = div.textContent.trim() || ('动作' + (idx+1));
+          });
+        })(nameDivs[n], n);
+      }
+
+      var inputs = list.querySelectorAll('.set-input');
+      for (var ip = 0; ip < inputs.length; ip++) {
+        (function(inp) {
+          inp.addEventListener('input', function() {
+            var item = inp.closest('.exercise-item');
+            var exIdx = parseInt(item.getAttribute('data-idx'));
+            var setIdx = parseInt(inp.getAttribute('data-set-idx'));
+            var field = inp.getAttribute('data-field');
+            if (editExercises[exIdx]) {
+              if (!editExercises[exIdx].sets) editExercises[exIdx].sets = [];
+              if (!editExercises[exIdx].sets[setIdx]) editExercises[exIdx].sets[setIdx] = { weight: '', reps: '' };
+              editExercises[exIdx].sets[setIdx][field] = inp.value;
+            }
+          });
+        })(inputs[ip]);
+      }
+    }
+
+    function saveEditRecord() {
+      if (!editingDateKey) return;
+      var data = getData();
+      var content = document.getElementById('editWorkoutInput').value.trim();
+
+      if (!data[editingDateKey]) {
+        data[editingDateKey] = { checked: false, content: '', muscles: [], cardio: [], exercises: [] };
+      }
+      data[editingDateKey].checked = true;
+      data[editingDateKey].content = content;
+      data[editingDateKey].muscles = editSelectedMuscles.slice();
+      data[editingDateKey].cardio = editSelectedCardio.slice();
+      data[editingDateKey].exercises = JSON.parse(JSON.stringify(editExercises));
+
+      saveData(data);
+      closeEditModal();
+      refreshAll();
+      showUpdateAnim();
+    }
+
+    document.getElementById('editCancel').addEventListener('click', closeEditModal);
+    document.getElementById('editSave').addEventListener('click', saveEditRecord);
+    document.getElementById('editModal').addEventListener('click', function(e) {
+      if (e.target === this) closeEditModal();
+    });
+    document.getElementById('editAddExerciseBtn').addEventListener('click', function() {
+      addEditExercise(editSelectedMuscles[editSelectedMuscles.length - 1] || null);
+      renderEditExerciseList();
+    });
+
+    var editMuscleBtns = document.querySelectorAll('#editMuscleTags .muscle-tag');
+    for (var emi = 0; emi < editMuscleBtns.length; emi++) {
+      (function(btn) {
+        btn.addEventListener('click', function() { toggleEditMuscle(btn.getAttribute('data-tag')); });
+      })(editMuscleBtns[emi]);
+    }
+
+    var editCardioBtns = document.querySelectorAll('#editCardioTags .cardio-tag');
+    for (var eci = 0; eci < editCardioBtns.length; eci++) {
+      (function(btn) {
+        btn.addEventListener('click', function() { toggleEditCardio(btn.getAttribute('data-tag')); });
+      })(editCardioBtns[eci]);
+    }
+
+    var editComboBtns = document.querySelectorAll('#editComboTags .combo-tag');
+    for (var ecb = 0; ecb < editComboBtns.length; ecb++) {
+      (function(btn) {
+        btn.addEventListener('click', function() { applyEditCombo(btn.getAttribute('data-combo')); });
+      })(editComboBtns[ecb]);
+    }
 
     document.getElementById('weightAddBtn').addEventListener('click', addWeight);
     document.getElementById('weightInput').addEventListener('keypress', function(e) {
