@@ -12,6 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
   body {
@@ -23,6 +24,8 @@
     padding-top: env(safe-area-inset-top);
     padding-bottom: calc(60px + env(safe-area-inset-bottom));
     overflow-x: hidden;
+    font-size: 17px;
+    line-height: 1.5;
   }
 
   .container {
@@ -49,13 +52,13 @@
   }
 
   .top-bar .date-text {
-    font-size: 13px;
+    font-size: 17px;
     opacity: 0.85;
   }
 
   .top-bar .quote {
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 16px;
     opacity: 0.9;
     font-style: italic;
     line-height: 1.4;
@@ -116,7 +119,7 @@
   }
 
   .tab-item .tab-label {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 500;
   }
 
@@ -144,12 +147,12 @@
   }
 
   .card-title .icon {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .card-title .more {
     margin-left: auto;
-    font-size: 12px;
+    font-size: 16px;
     color: #999;
     font-weight: 400;
   }
@@ -178,7 +181,7 @@
   }
 
   .stat-card .stat-label {
-    font-size: 12px;
+    font-size: 16px;
     color: #888;
   }
 
@@ -196,7 +199,7 @@
   }
 
   .today-summary .ts-title {
-    font-size: 15px;
+    font-size: 20px;
     opacity: 0.9;
     margin-bottom: 8px;
   }
@@ -209,7 +212,7 @@
   }
 
   .today-summary .ts-tag {
-    font-size: 12px;
+    font-size: 16px;
     padding: 4px 10px;
     background: rgba(255,255,255,0.2);
     border-radius: 10px;
@@ -223,7 +226,7 @@
   }
 
   .today-summary .ts-check {
-    font-size: 13px;
+    font-size: 17px;
     opacity: 0.9;
   }
 
@@ -233,7 +236,7 @@
     color: #667eea;
     border: none;
     border-radius: 14px;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
@@ -275,7 +278,7 @@
     border: none;
     background: #F0F0F0;
     border-radius: 50%;
-    font-size: 15px;
+    font-size: 20px;
     color: #666;
     cursor: pointer;
     display: flex;
@@ -299,7 +302,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 11px;
+    font-size: 14px;
     color: #666;
   }
 
@@ -317,7 +320,7 @@
 
   .weekday {
     text-align: center;
-    font-size: 11px;
+    font-size: 14px;
     color: #AAA;
     font-weight: 500;
     padding: 4px 0;
@@ -335,7 +338,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 17px;
     border-radius: 8px;
     cursor: pointer;
     position: relative;
@@ -354,7 +357,7 @@
   }
   .day-cell.checked.today { box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3); }
 
-  .day-cell .day-num { line-height: 1; margin-bottom: 2px; font-size: 12px; }
+  .day-cell .day-num { line-height: 1; margin-bottom: 2px; font-size: 16px; }
 
   .day-cell .muscle-dots {
     display: flex;
@@ -378,7 +381,7 @@
 
   /* ===== 今日训练详情 ===== */
   .section-label {
-    font-size: 13px;
+    font-size: 17px;
     color: #888;
     margin-bottom: 8px;
     font-weight: 500;
@@ -396,7 +399,7 @@
     padding: 5px 11px;
     background: #F5F5F5;
     border-radius: 12px;
-    font-size: 12px;
+    font-size: 16px;
     color: #555;
     cursor: pointer;
     transition: all 0.2s;
@@ -405,6 +408,9 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   .muscle-tag:active { transform: scale(0.95); }
@@ -416,15 +422,29 @@
   }
 
   .muscle-tag.active {
-    color: white;
+    color: white !important;
     font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border-color: transparent !important;
+  }
+
+  .muscle-tag[data-tag="chest"].active { background: #FF6B6B !important; }
+  .muscle-tag[data-tag="back"].active { background: #4ECDC4 !important; }
+  .muscle-tag[data-tag="shoulder"].active { background: #FFE66D !important; }
+  .muscle-tag[data-tag="arm"].active { background: #95E1D3 !important; }
+  .muscle-tag[data-tag="leg"].active { background: #A06CD5 !important; }
+  .muscle-tag[data-tag="glute"].active { background: #F38181 !important; }
+  .muscle-tag[data-tag="core"].active { background: #FF9F43 !important; }
+
+  .muscle-tag.active .tag-dot {
+    box-shadow: 0 0 0 2px white;
   }
 
   .combo-tag {
     padding: 5px 12px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 12px;
-    font-size: 11px;
+    font-size: 14px;
     color: white;
     cursor: pointer;
     border: none;
@@ -439,12 +459,15 @@
     padding: 5px 11px;
     background: #F5F5F5;
     border-radius: 12px;
-    font-size: 12px;
+    font-size: 16px;
     color: #555;
     cursor: pointer;
     transition: all 0.2s;
     border: 2px solid transparent;
     font-family: inherit;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
   }
 
   .cardio-tag:active { transform: scale(0.95); }
@@ -479,7 +502,7 @@
 
   .exercise-name {
     flex: 1;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 600;
     color: #333;
   }
@@ -509,7 +532,7 @@
     border: 1px solid #E0E0E0;
     border-radius: 6px;
     padding: 0 6px;
-    font-size: 12px;
+    font-size: 16px;
     font-family: inherit;
     color: #333;
     background: white;
@@ -541,7 +564,7 @@
     border-radius: 10px;
     background: transparent;
     color: #999;
-    font-size: 13px;
+    font-size: 17px;
     font-family: inherit;
     cursor: pointer;
     margin-top: 8px;
@@ -562,7 +585,7 @@
     border: 2px solid #E8E8E8;
     border-radius: 10px;
     padding: 10px 12px;
-    font-size: 13px;
+    font-size: 17px;
     font-family: inherit;
     resize: none;
     color: #333;
@@ -614,7 +637,7 @@
 
   .checkin-btn.checked:active { transform: scale(0.98); }
 
-  .checkin-btn .btn-icon { font-size: 18px; }
+  .checkin-btn .btn-icon { font-size: 22px; }
 
   /* ===== 统计页 ===== */
   .stat-section {
@@ -644,7 +667,7 @@
 
   .muscle-stat-label {
     width: 40px;
-    font-size: 13px;
+    font-size: 17px;
     color: #555;
     flex-shrink: 0;
   }
@@ -668,7 +691,7 @@
   .muscle-stat-count {
     width: 40px;
     text-align: right;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 600;
     color: #333;
     flex-shrink: 0;
@@ -733,7 +756,7 @@
     border: 2px solid #E8E8E8;
     border-radius: 10px;
     padding: 0 36px 0 12px;
-    font-size: 15px;
+    font-size: 20px;
     font-family: inherit;
     color: #333;
   }
@@ -749,7 +772,7 @@
     top: 50%;
     transform: translateY(-50%);
     color: #999;
-    font-size: 13px;
+    font-size: 17px;
     pointer-events: none;
   }
 
@@ -784,7 +807,7 @@
   }
 
   .weight-stat-val {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
     color: #222;
     margin-bottom: 1px;
@@ -815,7 +838,7 @@
   }
 
   .bmi-label {
-    font-size: 13px;
+    font-size: 17px;
     color: #667eea;
     font-weight: 600;
   }
@@ -827,7 +850,7 @@
   }
 
   .bmi-tag {
-    font-size: 11px;
+    font-size: 14px;
     padding: 2px 8px;
     border-radius: 10px;
     color: white;
@@ -835,7 +858,7 @@
   }
 
   .bmi-desc {
-    font-size: 12px;
+    font-size: 16px;
     color: #888;
   }
 
@@ -926,7 +949,7 @@
   }
 
   .bmi-guide-title {
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 600;
     color: #333;
     margin-bottom: 8px;
@@ -942,7 +965,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .bmi-guide-dot {
@@ -975,7 +998,7 @@
     border-left: 3px solid #FAAD14;
     padding: 8px 10px;
     border-radius: 6px;
-    font-size: 12px;
+    font-size: 16px;
     color: #666;
     line-height: 1.5;
   }
@@ -1016,7 +1039,7 @@
   .weight-history-item:active { background: #F0F0F0; }
 
   .weight-history-date {
-    font-size: 12px;
+    font-size: 16px;
     color: #666;
   }
 
@@ -1060,17 +1083,82 @@
     align-items: center;
     justify-content: center;
     font-size: 32px;
-    margin: 0 auto 10px;
+    margin: 0 auto 6px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .profile-avatar:active { transform: scale(0.95); }
+
+  .profile-avatar-edit {
+    font-size: 12px;
+    color: #667eea;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .avatar-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+    margin: auto;
+  }
+
+  .avatar-item:active { transform: scale(0.95); }
+  .avatar-item.selected { border-color: #667eea; background: #E8E8FF; }
+
+  .theme-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    padding: 10px 0;
+  }
+
+  .theme-item {
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .theme-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin: 0 auto 6px;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+  }
+
+  .theme-item:active .theme-preview { transform: scale(0.95); }
+  .theme-item.selected .theme-preview { border-color: #333; }
+
+  .theme-name {
+    font-size: 12px;
+    color: #666;
   }
 
   .profile-name {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     color: #222;
   }
 
   .profile-desc {
-    font-size: 13px;
+    font-size: 17px;
     color: #888;
     margin-top: 2px;
   }
@@ -1122,7 +1210,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 22px;
     margin-right: 12px;
     flex-shrink: 0;
   }
@@ -1139,13 +1227,13 @@
   }
 
   .setting-title {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     color: #222;
   }
 
   .setting-value {
-    font-size: 12px;
+    font-size: 16px;
     color: #999;
     margin-top: 2px;
   }
@@ -1182,7 +1270,7 @@
   }
 
   .achievement-name {
-    font-size: 11px;
+    font-size: 14px;
     color: #555;
     font-weight: 500;
   }
@@ -1213,6 +1301,8 @@
     animation: modalIn 0.3s ease;
     max-height: 80vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
   }
 
   @keyframes modalIn {
@@ -1233,7 +1323,7 @@
   }
 
   .modal-label {
-    font-size: 13px;
+    font-size: 17px;
     color: #666;
     margin-bottom: 6px;
   }
@@ -1244,7 +1334,7 @@
     border: 2px solid #E8E8E8;
     border-radius: 10px;
     padding: 0 12px;
-    font-size: 15px;
+    font-size: 20px;
     font-family: inherit;
     color: #333;
   }
@@ -1320,7 +1410,7 @@
     text-align: center;
     padding: 24px 0;
     color: #CCC;
-    font-size: 13px;
+    font-size: 17px;
   }
 
   .empty-state .empty-icon {
@@ -1414,26 +1504,26 @@
 
         <div class="section-label mt-14">力量部位</div>
         <div class="tag-group" id="muscleTags">
-          <button class="muscle-tag" data-tag="chest" data-color="#FF6B6B">
-            <span class="tag-dot" style="background:#FF6B6B"></span>胸
+          <button class="muscle-tag" data-tag="chest" data-color="#FF4757">
+            <span class="tag-dot" style="background:#FF4757"></span>胸
           </button>
-          <button class="muscle-tag" data-tag="back" data-color="#4ECDC4">
-            <span class="tag-dot" style="background:#4ECDC4"></span>背
+          <button class="muscle-tag" data-tag="back" data-color="#2ED573">
+            <span class="tag-dot" style="background:#2ED573"></span>背
           </button>
-          <button class="muscle-tag" data-tag="shoulder" data-color="#FFE66D">
-            <span class="tag-dot" style="background:#FFE66D"></span>肩
+          <button class="muscle-tag" data-tag="shoulder" data-color="#FFA502">
+            <span class="tag-dot" style="background:#FFA502"></span>肩
           </button>
-          <button class="muscle-tag" data-tag="arm" data-color="#95E1D3">
-            <span class="tag-dot" style="background:#95E1D3"></span>臂
+          <button class="muscle-tag" data-tag="arm" data-color="#3742FA">
+            <span class="tag-dot" style="background:#3742FA"></span>臂
           </button>
-          <button class="muscle-tag" data-tag="leg" data-color="#A06CD5">
-            <span class="tag-dot" style="background:#A06CD5"></span>腿
+          <button class="muscle-tag" data-tag="leg" data-color="#A55EEA">
+            <span class="tag-dot" style="background:#A55EEA"></span>腿
           </button>
-          <button class="muscle-tag" data-tag="glute" data-color="#F38181">
-            <span class="tag-dot" style="background:#F38181"></span>臀
+          <button class="muscle-tag" data-tag="glute" data-color="#FF6B81">
+            <span class="tag-dot" style="background:#FF6B81"></span>臀
           </button>
-          <button class="muscle-tag" data-tag="core" data-color="#FF9F43">
-            <span class="tag-dot" style="background:#FF9F43"></span>核心
+          <button class="muscle-tag" data-tag="core" data-color="#00D2D3">
+            <span class="tag-dot" style="background:#00D2D3"></span>核心
           </button>
         </div>
 
@@ -1629,8 +1719,9 @@
     <!-- 我的页 -->
     <div class="page" id="page-me">
       <div class="profile-header">
-        <div class="profile-avatar">💪</div>
-        <div class="profile-name">健身达人</div>
+        <div class="profile-avatar" id="profileAvatar" onclick="showAvatarModal()">💪</div>
+        <div class="profile-avatar-edit" onclick="showAvatarModal()">更换头像</div>
+        <div class="profile-name" id="profileName">健身达人</div>
         <div class="profile-desc" id="profileDesc">坚持就是胜利</div>
         <div class="profile-body-stats" id="profileBodyStats" style="display:none;">
           <div class="body-stat">
@@ -1714,6 +1805,15 @@
       </div>
 
       <!-- 清空数据 -->
+      <div class="setting-item" id="themeSetting" onclick="showThemeModal()">
+        <div class="setting-icon">🎨</div>
+        <div class="setting-content">
+          <div class="setting-title">界面风格</div>
+          <div class="setting-value" id="themeName">默认紫色</div>
+        </div>
+        <div class="setting-arrow">›</div>
+      </div>
+
       <div class="setting-item" id="clearData">
         <div class="setting-icon red">🗑️</div>
         <div class="setting-content">
@@ -1786,6 +1886,70 @@
     </div>
   </div>
 
+  <!-- 头像弹窗 -->
+  <div class="modal-overlay" id="avatarModal">
+    <div class="modal">
+      <h3>👤 选择头像</h3>
+      <div class="avatar-grid">
+        <div class="avatar-item" onclick="selectAvatar('💪')">💪</div>
+        <div class="avatar-item" onclick="selectAvatar('🏋️')">🏋️</div>
+        <div class="avatar-item" onclick="selectAvatar('🏃')">🏃</div>
+        <div class="avatar-item" onclick="selectAvatar('🧘')">🧘</div>
+        <div class="avatar-item" onclick="selectAvatar('🤸')">🤸</div>
+        <div class="avatar-item" onclick="selectAvatar('🥋')">🥋</div>
+        <div class="avatar-item" onclick="selectAvatar('⚽')">⚽</div>
+        <div class="avatar-item" onclick="selectAvatar('🏀')">🏀</div>
+        <div class="avatar-item" onclick="selectAvatar('🚴')">🚴</div>
+        <div class="avatar-item" onclick="selectAvatar('🥊')">🥊</div>
+        <div class="avatar-item" onclick="selectAvatar('🔥')">🔥</div>
+        <div class="avatar-item" onclick="selectAvatar('⚡')">⚡</div>
+      </div>
+      <div style="text-align:center;margin:14px 0 8px;">
+        <button class="modal-btn confirm" style="width:100%;" onclick="document.getElementById('avatarFile').click()">📷 从相册选择</button>
+        <input type="file" id="avatarFile" accept="image/*" style="display:none;" onchange="uploadAvatar(this)">
+      </div>
+      <div class="modal-buttons">
+        <button class="modal-btn cancel" onclick="hideAvatarModal()">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主题弹窗 -->
+  <div class="modal-overlay" id="themeModal">
+    <div class="modal">
+      <h3>🎨 界面风格</h3>
+      <div class="theme-grid">
+        <div class="theme-item" data-theme="purple" onclick="selectTheme('purple')">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#667eea,#764ba2)"></div>
+          <div class="theme-name">紫色渐变</div>
+        </div>
+        <div class="theme-item" data-theme="blue" onclick="selectTheme('blue')">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"></div>
+          <div class="theme-name">蓝色海洋</div>
+        </div>
+        <div class="theme-item" data-theme="green" onclick="selectTheme('green')">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#11998e,#38ef7d)"></div>
+          <div class="theme-name">绿色活力</div>
+        </div>
+        <div class="theme-item" data-theme="orange" onclick="selectTheme('orange')">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#f093fb,#f5576c)"></div>
+          <div class="theme-name">橙红热情</div>
+        </div>
+        <div class="theme-item" data-theme="dark" onclick="selectTheme('dark')">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#232526,#414345)"></div>
+          <div class="theme-name">深色模式</div>
+        </div>
+        <div class="theme-item" data-theme="pink" onclick="selectTheme('pink')">
+          <div class="theme-preview" style="background:linear-gradient(135deg,#ff9a9e,#fecfef)"></div>
+          <div class="theme-name">粉色甜美</div>
+        </div>
+      </div>
+      <div class="modal-buttons">
+        <button class="modal-btn cancel" onclick="hideThemeModal()">取消</button>
+      </div>
+    </div>
+  </div>
+
   <!-- 编辑弹窗 -->
   <div class="modal-overlay" id="editModal">
     <div class="modal" style="max-width:360px;max-height:85vh;overflow-y:auto;">
@@ -1796,46 +1960,46 @@
 
       <div class="section-label" style="margin-bottom:6px;">快速组合</div>
       <div class="tag-group" id="editComboTags" style="margin-bottom:10px;">
-        <button class="combo-tag" data-combo="push">推日</button>
-        <button class="combo-tag" data-combo="pull">拉日</button>
-        <button class="combo-tag" data-combo="leg">腿臀</button>
-        <button class="combo-tag" data-combo="upper">上肢</button>
-        <button class="combo-tag" data-combo="full">全身</button>
+        <button class="combo-tag" data-combo="push" onclick="handleEditCombo('push')">推日</button>
+        <button class="combo-tag" data-combo="pull" onclick="handleEditCombo('pull')">拉日</button>
+        <button class="combo-tag" data-combo="leg" onclick="handleEditCombo('leg')">腿臀</button>
+        <button class="combo-tag" data-combo="upper" onclick="handleEditCombo('upper')">上肢</button>
+        <button class="combo-tag" data-combo="full" onclick="handleEditCombo('full')">全身</button>
       </div>
 
       <div class="section-label mt-14" style="margin-bottom:6px;">力量部位</div>
       <div class="tag-group" id="editMuscleTags" style="margin-bottom:10px;">
-        <button class="muscle-tag" data-tag="chest" data-color="#FF6B6B">
-          <span class="tag-dot" style="background:#FF6B6B"></span>胸
+        <button class="muscle-tag" data-tag="chest" data-color="#FF4757" onclick="handleEditMuscle('chest')">
+          <span class="tag-dot" style="background:#FF4757"></span>胸
         </button>
-        <button class="muscle-tag" data-tag="back" data-color="#4ECDC4">
-          <span class="tag-dot" style="background:#4ECDC4"></span>背
+        <button class="muscle-tag" data-tag="back" data-color="#2ED573" onclick="handleEditMuscle('back')">
+          <span class="tag-dot" style="background:#2ED573"></span>背
         </button>
-        <button class="muscle-tag" data-tag="shoulder" data-color="#FFE66D">
-          <span class="tag-dot" style="background:#FFE66D"></span>肩
+        <button class="muscle-tag" data-tag="shoulder" data-color="#FFA502" onclick="handleEditMuscle('shoulder')">
+          <span class="tag-dot" style="background:#FFA502"></span>肩
         </button>
-        <button class="muscle-tag" data-tag="arm" data-color="#95E1D3">
-          <span class="tag-dot" style="background:#95E1D3"></span>臂
+        <button class="muscle-tag" data-tag="arm" data-color="#3742FA" onclick="handleEditMuscle('arm')">
+          <span class="tag-dot" style="background:#3742FA"></span>臂
         </button>
-        <button class="muscle-tag" data-tag="leg" data-color="#A06CD5">
-          <span class="tag-dot" style="background:#A06CD5"></span>腿
+        <button class="muscle-tag" data-tag="leg" data-color="#A55EEA" onclick="handleEditMuscle('leg')">
+          <span class="tag-dot" style="background:#A55EEA"></span>腿
         </button>
-        <button class="muscle-tag" data-tag="glute" data-color="#F38181">
-          <span class="tag-dot" style="background:#F38181"></span>臀
+        <button class="muscle-tag" data-tag="glute" data-color="#FF6B81" onclick="handleEditMuscle('glute')">
+          <span class="tag-dot" style="background:#FF6B81"></span>臀
         </button>
-        <button class="muscle-tag" data-tag="core" data-color="#FF9F43">
-          <span class="tag-dot" style="background:#FF9F43"></span>核心
+        <button class="muscle-tag" data-tag="core" data-color="#00D2D3" onclick="handleEditMuscle('core')">
+          <span class="tag-dot" style="background:#00D2D3"></span>核心
         </button>
       </div>
 
       <div class="section-label mt-14" style="margin-bottom:6px;">有氧</div>
       <div class="tag-group" id="editCardioTags" style="margin-bottom:10px;">
-        <button class="cardio-tag" data-tag="running">🏃 跑步</button>
-        <button class="cardio-tag" data-tag="swim">🏊 游泳</button>
-        <button class="cardio-tag" data-tag="cycle">🚴 骑行</button>
-        <button class="cardio-tag" data-tag="hiit">🔥 HIIT</button>
-        <button class="cardio-tag" data-tag="jump">⏰ 跳绳</button>
-        <button class="cardio-tag" data-tag="elliptical">⚙️ 椭圆机</button>
+        <button class="cardio-tag" data-tag="running" onclick="handleEditCardio('running')">🏃 跑步</button>
+        <button class="cardio-tag" data-tag="swim" onclick="handleEditCardio('swim')">🏊 游泳</button>
+        <button class="cardio-tag" data-tag="cycle" onclick="handleEditCardio('cycle')">🚴 骑行</button>
+        <button class="cardio-tag" data-tag="hiit" onclick="handleEditCardio('hiit')">🔥 HIIT</button>
+        <button class="cardio-tag" data-tag="jump" onclick="handleEditCardio('jump')">⏰ 跳绳</button>
+        <button class="cardio-tag" data-tag="elliptical" onclick="handleEditCardio('elliptical')">⚙️ 椭圆机</button>
       </div>
 
       <div class="section-label mt-14" style="margin-bottom:6px;">训练动作</div>
@@ -1891,23 +2055,263 @@
   var exercises = [];
   var selectedDetailDate = null;
 
+  var editSelectedMuscles = [];
+  var editSelectedCardio = [];
+  var editExercises = [];
+  var editingDateKey = null;
+
+  // ========== 编辑弹窗函数（必须尽早定义，供 onclick 调用）==========
+  function toggleEditMuscle(tag) {
+    var idx = editSelectedMuscles.indexOf(tag);
+    if (idx >= 0) {
+      editSelectedMuscles.splice(idx, 1);
+    } else {
+      editSelectedMuscles.push(tag);
+      if (editExercises.length === 0) {
+        addEditExercise(tag);
+        renderEditExerciseList();
+      }
+    }
+    updateEditMuscleTags();
+  }
+
+  function toggleEditCardio(tag) {
+    var idx = editSelectedCardio.indexOf(tag);
+    if (idx >= 0) {
+      editSelectedCardio.splice(idx, 1);
+    } else {
+      editSelectedCardio.push(tag);
+    }
+    updateEditCardioTags();
+  }
+
+  function applyEditCombo(combo) {
+    var map = {
+      push: ['chest', 'shoulder', 'arm'],
+      pull: ['back', 'arm'],
+      leg: ['leg', 'glute', 'core'],
+      upper: ['chest', 'back', 'shoulder', 'arm'],
+      full: ['chest', 'back', 'shoulder', 'arm', 'leg', 'glute', 'core']
+    };
+    editSelectedMuscles = (map[combo] || []).slice();
+    editExercises = [];
+    for (var i = 0; i < editSelectedMuscles.length; i++) {
+      addEditExercise(editSelectedMuscles[i]);
+    }
+    updateEditMuscleTags();
+    renderEditExerciseList();
+  }
+
+  function addEditExercise(muscleKey) {
+    var name = '';
+    // 注意：EXERCISE_TEMPLATES 在后面定义，这里先使用默认名称
+    name = muscleKey ? (muscleKey + '训练') : '动作' + (editExercises.length + 1);
+    editExercises.push({
+      name: name,
+      sets: [{ weight: '', reps: '' }, { weight: '', reps: '' }, { weight: '', reps: '' }]
+    });
+  }
+
+  function updateEditMuscleTags() {
+    var tags = document.querySelectorAll('#editMuscleTags .muscle-tag');
+    for (var i = 0; i < tags.length; i++) {
+      var t = tags[i];
+      var key = t.getAttribute('data-tag');
+      var color = t.getAttribute('data-color');
+      if (editSelectedMuscles.indexOf(key) >= 0) {
+        t.classList.add('active');
+        t.style.background = color;
+        t.style.color = 'white';
+        t.style.borderColor = color;
+      } else {
+        t.classList.remove('active');
+        t.style.background = '#F5F5F5';
+        t.style.color = '#555';
+        t.style.borderColor = 'transparent';
+      }
+    }
+  }
+
+  function updateEditCardioTags() {
+    var tags = document.querySelectorAll('#editCardioTags .cardio-tag');
+    for (var i = 0; i < tags.length; i++) {
+      var t = tags[i];
+      var key = t.getAttribute('data-tag');
+      if (editSelectedCardio.indexOf(key) >= 0) {
+        t.classList.add('active');
+      } else {
+        t.classList.remove('active');
+      }
+    }
+  }
+
+  function renderEditExerciseList() {
+    var list = document.getElementById('editExerciseList');
+    if (!list) return;
+    if (!editExercises || editExercises.length === 0) {
+      list.innerHTML = '<div class="empty-state" style="padding:14px 0;"><div class="empty-icon" style="font-size:30px;">🏋️</div><div>还没有添加动作</div></div>';
+      return;
+    }
+    var html = '';
+    for (var i = 0; i < editExercises.length; i++) {
+      var ex = editExercises[i];
+      html += '<div class="exercise-item" data-idx="' + i + '">';
+      html += '<div class="exercise-header">';
+      html += '<div class="exercise-name" contenteditable="true" data-field="name">' + (ex.name || '动作' + (i+1)) + '</div>';
+      html += '<button class="exercise-delete" data-idx="' + i + '">×</button>';
+      html += '</div>';
+      html += '<div class="sets-row">';
+      var sets = ex.sets || [];
+      for (var s = 0; s < 3; s++) {
+        var set = sets[s] || { weight: '', reps: '' };
+        html += '<div class="set-col">';
+        html += '<input type="number" class="set-input" data-set-idx="' + s + '" data-field="weight" value="' + (set.weight || '') + '" placeholder="--">';
+        html += '<div class="set-label">重量</div>';
+        html += '</div>';
+        html += '<div class="set-col">';
+        html += '<input type="number" class="set-input" data-set-idx="' + s + '" data-field="reps" value="' + (set.reps || '') + '" placeholder="--">';
+        html += '<div class="set-label">次</div>';
+        html += '</div>';
+      }
+      html += '</div>';
+      html += '</div>';
+    }
+    list.innerHTML = html;
+  }
+
+  // 立即暴露到 window 对象
+  window.handleEditMuscle = toggleEditMuscle;
+  window.handleEditCardio = toggleEditCardio;
+  window.handleEditCombo = applyEditCombo;
+
+  // ========== 头像和主题功能 ==========
+  var THEME_MAP = {
+    purple: { name: '紫色渐变', gradient: 'linear-gradient(135deg,#667eea,#764ba2)', btnBg: '#667eea' },
+    blue: { name: '蓝色海洋', gradient: 'linear-gradient(135deg,#4facfe,#00f2fe)', btnBg: '#4facfe' },
+    green: { name: '绿色活力', gradient: 'linear-gradient(135deg,#11998e,#38ef7d)', btnBg: '#11998e' },
+    orange: { name: '橙红热情', gradient: 'linear-gradient(135deg,#f093fb,#f5576c)', btnBg: '#f093fb' },
+    dark: { name: '深色模式', gradient: 'linear-gradient(135deg,#232526,#414345)', btnBg: '#333' },
+    pink: { name: '粉色甜美', gradient: 'linear-gradient(135deg,#ff9a9e,#fecfef)', btnBg: '#ff9a9e' }
+  };
+
+  function showAvatarModal() {
+    document.getElementById('avatarModal').classList.add('show');
+  }
+  window.showAvatarModal = showAvatarModal;
+
+  function hideAvatarModal() {
+    document.getElementById('avatarModal').classList.remove('show');
+  }
+  window.hideAvatarModal = hideAvatarModal;
+
+  function selectAvatar(avatar) {
+    var s = getSettings();
+    s.avatar = avatar;
+    s.avatarImg = '';
+    saveSettings(s);
+    var el = document.getElementById('profileAvatar');
+    el.innerHTML = avatar;
+    el.style.background = 'linear-gradient(135deg,#667eea 0%,#764ba2 100%)';
+    hideAvatarModal();
+  }
+
+  function uploadAvatar(input) {
+    var file = input.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var img = new Image();
+      img.onload = function() {
+        var canvas = document.createElement('canvas');
+        var size = 120;
+        canvas.width = size;
+        canvas.height = size;
+        var ctx = canvas.getContext('2d');
+        var min = Math.min(img.width, img.height);
+        var sx = (img.width - min) / 2;
+        var sy = (img.height - min) / 2;
+        ctx.drawImage(img, sx, sy, min, min, 0, 0, size, size);
+        var dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+        var s = getSettings();
+        s.avatarImg = dataUrl;
+        s.avatar = '';
+        saveSettings(s);
+        var el = document.getElementById('profileAvatar');
+        el.innerHTML = '';
+        el.style.background = 'url(' + dataUrl + ') center/cover';
+        hideAvatarModal();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+    input.value = '';
+  }
+  window.selectAvatar = selectAvatar;
+  window.uploadAvatar = uploadAvatar;
+
+  function showThemeModal() {
+    document.getElementById('themeModal').classList.add('show');
+  }
+  window.showThemeModal = showThemeModal;
+
+  function hideThemeModal() {
+    document.getElementById('themeModal').classList.remove('show');
+  }
+  window.hideThemeModal = hideThemeModal;
+
+  function selectTheme(theme) {
+    var s = getSettings();
+    s.theme = theme;
+    saveSettings(s);
+    applyTheme(theme);
+    document.getElementById('themeName').textContent = THEME_MAP[theme].name;
+    hideThemeModal();
+  }
+  window.selectTheme = selectTheme;
+
+  function applyTheme(theme) {
+    var t = THEME_MAP[theme] || THEME_MAP.purple;
+    var topBar = document.querySelector('.top-bar');
+    if (topBar) topBar.style.background = t.gradient;
+    var checkinBtn = document.querySelector('.checkin-btn');
+    if (checkinBtn) checkinBtn.style.background = t.gradient;
+    var avatar = document.querySelector('.profile-avatar');
+    if (avatar && !getSettings().avatarImg) avatar.style.background = t.gradient;
+  }
+
+  function loadAvatarAndTheme() {
+    var s = getSettings();
+    var el = document.getElementById('profileAvatar');
+    if (s.avatarImg) {
+      el.innerHTML = '';
+      el.style.background = 'url(' + s.avatarImg + ') center/cover';
+    } else if (s.avatar) {
+      el.innerHTML = s.avatar;
+    }
+    if (s.theme) {
+      applyTheme(s.theme);
+      var tn = document.getElementById('themeName');
+      if (tn) tn.textContent = THEME_MAP[s.theme].name;
+    }
+  }
+
   var MUSCLE_MAP = {
-    chest:  { name: '胸',   color: '#FF6B6B' },
-    back:   { name: '背',   color: '#4ECDC4' },
-    shoulder:{ name: '肩',  color: '#FFE66D' },
-    arm:    { name: '臂',   color: '#95E1D3' },
-    leg:    { name: '腿',   color: '#A06CD5' },
-    glute:  { name: '臀',   color: '#F38181' },
-    core:   { name: '核心', color: '#FF9F43' }
+    chest:   { name: '胸',   color: '#FF4757' },  // 鲜红
+    back:    { name: '背',   color: '#2ED573' },  // 翠绿
+    shoulder:{ name: '肩',   color: '#FFA502' },  // 橙黄
+    arm:     { name: '臂',   color: '#3742FA' },  // 深蓝
+    leg:     { name: '腿',   color: '#A55EEA' },  // 紫
+    glute:   { name: '臀',   color: '#FF6B81' },  // 玫瑰红
+    core:    { name: '核心', color: '#00D2D3' }   // 青蓝
   };
 
   var CARDIO_MAP = {
-    running:    { name: '跑步', color: '#00B4D8' },
-    swim:       { name: '游泳', color: '#00B4D8' },
-    cycle:      { name: '骑行', color: '#00B4D8' },
-    hiit:       { name: 'HIIT', color: '#00B4D8' },
-    jump:       { name: '跳绳', color: '#00B4D8' },
-    elliptical: { name: '椭圆机', color: '#00B4D8' }
+    running: { name: '跑步', color: '#7BED9F' },    // 浅绿
+    swim:    { name: '游泳', color: '#70A1FF' },    // 蓝
+    cycle:   { name: '骑行', color: '#FF7F50' },    // 珊瑚
+    hiit:    { name: 'HIIT', color: '#FF6B6B' },    // 红
+    jump:    { name: '跳绳', color: '#ECCC68' },    // 金黄
+    elliptical: { name: '椭圆机', color: '#A4B0BE' } // 灰蓝
   };
 
   var MUSCLE_ORDER = ['chest', 'back', 'shoulder', 'arm', 'leg', 'glute', 'core'];
@@ -2002,6 +2406,14 @@
     return date.getFullYear() === t.getFullYear() &&
            date.getMonth() === t.getMonth() &&
            date.getDate() === t.getDate();
+  }
+
+  function isFutureDate(date) {
+    var t = new Date();
+    t.setHours(0, 0, 0, 0);
+    var d = new Date(date);
+    d.setHours(0, 0, 0, 0);
+    return d > t;
   }
 
   function escapeHtml(text) {
@@ -2172,6 +2584,16 @@
     var data = getData();
     var record = data[dateKey];
 
+    // 如果是今天，直接滚动到主页面的打卡区域，不弹出详情弹窗
+    if (isToday(dateObj)) {
+      switchTab('today');
+      var card = document.querySelector('.card');
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+
     var dateStr = (dateObj.getMonth() + 1) + '月' + dateObj.getDate() + '日';
     var wds = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     dateStr += ' ' + wds[dateObj.getDay()];
@@ -2179,6 +2601,17 @@
 
     var body = document.getElementById('modalBody');
     var html = '';
+
+    if (isFutureDate(dateObj)) {
+      html = '<div class="empty-state"><div class="empty-icon">📅</div><div>未来日期无法打卡</div><div style="font-size:12px;color:#999;margin-top:4px;">请选择今天或之前的日期</div></div>';
+      document.getElementById('modalEdit').style.display = 'none';
+      document.getElementById('deleteBtnRow').style.display = 'none';
+      body.innerHTML = html;
+      document.getElementById('detailModal').classList.add('show');
+      return;
+    }
+
+    document.getElementById('modalEdit').style.display = '';
 
     if (!record || !record.checked) {
       html = '<div class="empty-state"><div class="empty-icon">📝</div><div>当天没有训练记录</div></div>';
@@ -2559,7 +2992,8 @@
     if (list.length === 0) {
       curEl.textContent = maxEl.textContent = minEl.textContent = chgEl.textContent = '--';
       chgEl.className = 'weight-stat-val';
-      document.getElementById('bmiRow').style.display = 'none';
+      var bmiRowEl = document.getElementById('bmiRow');
+      if (bmiRowEl) bmiRowEl.style.display = 'none';
       return;
     }
 
@@ -3099,6 +3533,97 @@
     });
   }
 
+  // ========== 编辑弹窗函数 ==========
+  function openEditModal() {
+    if (!selectedDetailDate) return;
+    editingDateKey = selectedDetailDate;
+    hideDetail();
+    var data = getData();
+    var record = data[editingDateKey];
+
+    editSelectedMuscles = (record && record.muscles) ? record.muscles.slice() : [];
+    editSelectedCardio = (record && record.cardio) ? record.cardio.slice() : [];
+    editExercises = (record && record.exercises) ? JSON.parse(JSON.stringify(record.exercises)) : [];
+
+    document.getElementById('editWorkoutInput').value = (record && record.content) ? record.content : '';
+
+    var dateParts = editingDateKey.split('-');
+    var dateObj = new Date(parseInt(dateParts[0]), parseInt(dateParts[1]) - 1, parseInt(dateParts[2]));
+    var dateStr = (dateObj.getMonth() + 1) + '月' + dateObj.getDate() + '日';
+    var wds = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    dateStr += ' ' + wds[dateObj.getDay()];
+    document.getElementById('editModalDate').textContent = dateStr;
+    document.getElementById('editModalTitle').textContent = (record && record.checked) ? '编辑训练记录' : '补打卡';
+
+    updateEditMuscleTags();
+    updateEditCardioTags();
+    renderEditExerciseList();
+
+    document.getElementById('editModal').classList.add('show');
+  }
+
+  function closeEditModal() {
+    document.getElementById('editModal').classList.remove('show');
+    editingDateKey = null;
+    editSelectedMuscles = [];
+    editSelectedCardio = [];
+    editExercises = [];
+  }
+
+  function updateEditMuscleTags() {
+    var tags = document.querySelectorAll('#editMuscleTags .muscle-tag');
+    for (var i = 0; i < tags.length; i++) {
+      var t = tags[i];
+      var key = t.getAttribute('data-tag');
+      var color = t.getAttribute('data-color');
+      if (editSelectedMuscles.indexOf(key) >= 0) {
+        t.classList.add('active');
+        t.style.background = color;
+        t.style.color = 'white';
+        t.style.borderColor = color;
+      } else {
+        t.classList.remove('active');
+        t.style.background = '#F5F5F5';
+        t.style.color = '#555';
+        t.style.borderColor = 'transparent';
+      }
+    }
+  }
+
+  function updateEditCardioTags() {
+    var tags = document.querySelectorAll('#editCardioTags .cardio-tag');
+    for (var i = 0; i < tags.length; i++) {
+      var t = tags[i];
+      var key = t.getAttribute('data-tag');
+      if (editSelectedCardio.indexOf(key) >= 0) {
+        t.classList.add('active');
+      } else {
+        t.classList.remove('active');
+      }
+    }
+  }
+
+  function saveEditRecord() {
+    if (!editingDateKey) return;
+    var data = getData();
+    var content = document.getElementById('editWorkoutInput').value.trim();
+
+    if (!data[editingDateKey]) {
+      data[editingDateKey] = { checked: false, content: '', muscles: [], cardio: [], exercises: [] };
+    }
+    data[editingDateKey].checked = true;
+    data[editingDateKey].content = content;
+    data[editingDateKey].muscles = editSelectedMuscles.slice();
+    data[editingDateKey].cardio = editSelectedCardio.slice();
+    data[editingDateKey].exercises = JSON.parse(JSON.stringify(editExercises));
+
+    saveData(data);
+    closeEditModal();
+    refreshAll();
+    showUpdateAnim();
+    loadTodayContent();
+  }
+
   // ========== 通用刷新 ==========
   function refreshAll() {
     updateStats();
@@ -3110,6 +3635,7 @@
     updateHeaderDate();
     refreshAll();
     loadTodayContent();
+    loadAvatarAndTheme();
 
     var tabItems = document.querySelectorAll('.tab-item');
     for (var t = 0; t < tabItems.length; t++) {
@@ -3164,250 +3690,38 @@
       if (e.target === this) hideDetail();
     });
 
-    var editSelectedMuscles = [];
-    var editSelectedCardio = [];
-    var editExercises = [];
-    var editingDateKey = null;
-
-    function openEditModal() {
-      if (!selectedDetailDate) return;
-      editingDateKey = selectedDetailDate;
-      hideDetail();
-      var data = getData();
-      var record = data[editingDateKey];
-
-      editSelectedMuscles = (record && record.muscles) ? record.muscles.slice() : [];
-      editSelectedCardio = (record && record.cardio) ? record.cardio.slice() : [];
-      editExercises = (record && record.exercises) ? JSON.parse(JSON.stringify(record.exercises)) : [];
-
-      document.getElementById('editWorkoutInput').value = (record && record.content) ? record.content : '';
-
-      var dateParts = editingDateKey.split('-');
-      var dateObj = new Date(parseInt(dateParts[0]), parseInt(dateParts[1]) - 1, parseInt(dateParts[2]));
-      var dateStr = (dateObj.getMonth() + 1) + '月' + dateObj.getDate() + '日';
-      var wds = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
-      dateStr += ' ' + wds[dateObj.getDay()];
-      document.getElementById('editModalDate').textContent = dateStr;
-      document.getElementById('editModalTitle').textContent = (record && record.checked) ? '编辑训练记录' : '补打卡';
-
-      updateEditMuscleTags();
-      updateEditCardioTags();
-      renderEditExerciseList();
-
-      document.getElementById('editModal').classList.add('show');
-    }
-
-    function closeEditModal() {
-      document.getElementById('editModal').classList.remove('show');
-      editingDateKey = null;
-      editSelectedMuscles = [];
-      editSelectedCardio = [];
-      editExercises = [];
-    }
-
-    function updateEditMuscleTags() {
-      var tags = document.querySelectorAll('#editMuscleTags .muscle-tag');
-      for (var i = 0; i < tags.length; i++) {
-        var t = tags[i];
-        var key = t.getAttribute('data-tag');
-        if (editSelectedMuscles.indexOf(key) >= 0) {
-          t.classList.add('active');
-        } else {
-          t.classList.remove('active');
-        }
-      }
-    }
-
-    function updateEditCardioTags() {
-      var tags = document.querySelectorAll('#editCardioTags .cardio-tag');
-      for (var i = 0; i < tags.length; i++) {
-        var t = tags[i];
-        var key = t.getAttribute('data-tag');
-        if (editSelectedCardio.indexOf(key) >= 0) {
-          t.classList.add('active');
-        } else {
-          t.classList.remove('active');
-        }
-      }
-    }
-
-    function toggleEditMuscle(tag) {
-      var idx = editSelectedMuscles.indexOf(tag);
-      if (idx >= 0) {
-        editSelectedMuscles.splice(idx, 1);
-      } else {
-        editSelectedMuscles.push(tag);
-        if (editExercises.length === 0) {
-          addEditExercise(tag);
-          renderEditExerciseList();
-        }
-      }
-      updateEditMuscleTags();
-    }
-
-    function toggleEditCardio(tag) {
-      var idx = editSelectedCardio.indexOf(tag);
-      if (idx >= 0) {
-        editSelectedCardio.splice(idx, 1);
-      } else {
-        editSelectedCardio.push(tag);
-      }
-      updateEditCardioTags();
-    }
-
-    function applyEditCombo(combo) {
-      var map = {
-        push: ['chest', 'shoulder', 'arm'],
-        pull: ['back', 'arm'],
-        leg: ['leg', 'glute', 'core'],
-        upper: ['chest', 'back', 'shoulder', 'arm'],
-        full: ['chest', 'back', 'shoulder', 'arm', 'leg', 'glute', 'core']
-      };
-      editSelectedMuscles = (map[combo] || []).slice();
-      editExercises = [];
-      for (var i = 0; i < editSelectedMuscles.length; i++) {
-        addEditExercise(editSelectedMuscles[i]);
-      }
-      updateEditMuscleTags();
-      renderEditExerciseList();
-    }
-
-    function addEditExercise(muscleKey) {
-      var name = '';
-      if (muscleKey && MUSCLE_MAP[muscleKey]) {
-        var examples = MUSCLE_MAP[muscleKey].examples;
-        name = examples[0] || (MUSCLE_MAP[muscleKey].name + '训练');
-      } else {
-        name = '动作' + (editExercises.length + 1);
-      }
-      editExercises.push({
-        name: name,
-        sets: [{ weight: '', reps: '' }, { weight: '', reps: '' }, { weight: '', reps: '' }]
-      });
-    }
-
-    function renderEditExerciseList() {
-      var list = document.getElementById('editExerciseList');
-      if (!list) return;
-      if (!editExercises || editExercises.length === 0) {
-        list.innerHTML = '<div class="empty-state" style="padding:14px 0;"><div class="empty-icon" style="font-size:30px;">🏋️</div><div>还没有添加动作</div></div>';
-        return;
-      }
-      var html = '';
-      for (var i = 0; i < editExercises.length; i++) {
-        var ex = editExercises[i];
-        html += '<div class="exercise-item" data-idx="' + i + '">';
-        html += '<div class="exercise-header">';
-        html += '<div class="exercise-name" contenteditable="true" data-field="name">' + escapeHtml(ex.name || '动作' + (i+1)) + '</div>';
-        html += '<button class="exercise-delete" data-idx="' + i + '">×</button>';
-        html += '</div>';
-        html += '<div class="sets-row">';
-        var sets = ex.sets || [];
-        for (var s = 0; s < 3; s++) {
-          var set = sets[s] || { weight: '', reps: '' };
-          html += '<div class="set-col">';
-          html += '<input type="number" class="set-input" data-set-idx="' + s + '" data-field="weight" value="' + (set.weight || '') + '" placeholder="--">';
-          html += '<div class="set-label">重量</div>';
-          html += '</div>';
-          html += '<div class="set-col">';
-          html += '<input type="number" class="set-input" data-set-idx="' + s + '" data-field="reps" value="' + (set.reps || '') + '" placeholder="--">';
-          html += '<div class="set-label">次</div>';
-          html += '</div>';
-        }
-        html += '</div>';
-        html += '</div>';
-      }
-      list.innerHTML = html;
-
-      var delBtns = list.querySelectorAll('.exercise-delete');
-      for (var d = 0; d < delBtns.length; d++) {
-        (function(btn) {
-          btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            var idx = parseInt(btn.getAttribute('data-idx'));
-            editExercises.splice(idx, 1);
-            renderEditExerciseList();
-          });
-        })(delBtns[d]);
-      }
-
-      var nameDivs = list.querySelectorAll('.exercise-name');
-      for (var n = 0; n < nameDivs.length; n++) {
-        (function(div, idx) {
-          div.addEventListener('blur', function() {
-            if (editExercises[idx]) editExercises[idx].name = div.textContent.trim() || ('动作' + (idx+1));
-          });
-        })(nameDivs[n], n);
-      }
-
-      var inputs = list.querySelectorAll('.set-input');
-      for (var ip = 0; ip < inputs.length; ip++) {
-        (function(inp) {
-          inp.addEventListener('input', function() {
-            var item = inp.closest('.exercise-item');
-            var exIdx = parseInt(item.getAttribute('data-idx'));
-            var setIdx = parseInt(inp.getAttribute('data-set-idx'));
-            var field = inp.getAttribute('data-field');
-            if (editExercises[exIdx]) {
-              if (!editExercises[exIdx].sets) editExercises[exIdx].sets = [];
-              if (!editExercises[exIdx].sets[setIdx]) editExercises[exIdx].sets[setIdx] = { weight: '', reps: '' };
-              editExercises[exIdx].sets[setIdx][field] = inp.value;
-            }
-          });
-        })(inputs[ip]);
-      }
-    }
-
-    function saveEditRecord() {
-      if (!editingDateKey) return;
-      var data = getData();
-      var content = document.getElementById('editWorkoutInput').value.trim();
-
-      if (!data[editingDateKey]) {
-        data[editingDateKey] = { checked: false, content: '', muscles: [], cardio: [], exercises: [] };
-      }
-      data[editingDateKey].checked = true;
-      data[editingDateKey].content = content;
-      data[editingDateKey].muscles = editSelectedMuscles.slice();
-      data[editingDateKey].cardio = editSelectedCardio.slice();
-      data[editingDateKey].exercises = JSON.parse(JSON.stringify(editExercises));
-
-      saveData(data);
-      closeEditModal();
-      refreshAll();
-      showUpdateAnim();
-    }
-
     document.getElementById('editCancel').addEventListener('click', closeEditModal);
     document.getElementById('editSave').addEventListener('click', saveEditRecord);
+
+    // 编辑弹窗按钮事件由 onclick 内联处理，不再重复绑定
+    // 点击遮罩层关闭弹窗
     document.getElementById('editModal').addEventListener('click', function(e) {
-      if (e.target === this) closeEditModal();
+      if (e.target === document.getElementById('editModal')) {
+        closeEditModal();
+        return;
+      }
+      // 处理删除动作按钮
+      var delBtn = e.target.closest ? e.target.closest('.exercise-delete') : null;
+      if (delBtn) {
+        e.preventDefault();
+        var idx = parseInt(delBtn.getAttribute('data-idx'));
+        editExercises.splice(idx, 1);
+        renderEditExerciseList();
+        return;
+      }
     });
     document.getElementById('editAddExerciseBtn').addEventListener('click', function() {
       addEditExercise(editSelectedMuscles[editSelectedMuscles.length - 1] || null);
       renderEditExerciseList();
     });
 
-    var editMuscleBtns = document.querySelectorAll('#editMuscleTags .muscle-tag');
-    for (var emi = 0; emi < editMuscleBtns.length; emi++) {
-      (function(btn) {
-        btn.addEventListener('click', function() { toggleEditMuscle(btn.getAttribute('data-tag')); });
-      })(editMuscleBtns[emi]);
-    }
-
-    var editCardioBtns = document.querySelectorAll('#editCardioTags .cardio-tag');
-    for (var eci = 0; eci < editCardioBtns.length; eci++) {
-      (function(btn) {
-        btn.addEventListener('click', function() { toggleEditCardio(btn.getAttribute('data-tag')); });
-      })(editCardioBtns[eci]);
-    }
-
-    var editComboBtns = document.querySelectorAll('#editComboTags .combo-tag');
-    for (var ecb = 0; ecb < editComboBtns.length; ecb++) {
-      (function(btn) {
-        btn.addEventListener('click', function() { applyEditCombo(btn.getAttribute('data-combo')); });
-      })(editComboBtns[ecb]);
-    }
+    // 点击遮罩层关闭头像和主题弹窗
+    document.getElementById('avatarModal').addEventListener('click', function(e) {
+      if (e.target === this) hideAvatarModal();
+    });
+    document.getElementById('themeModal').addEventListener('click', function(e) {
+      if (e.target === this) hideThemeModal();
+    });
 
     document.getElementById('weightAddBtn').addEventListener('click', addWeight);
     document.getElementById('weightInput').addEventListener('keypress', function(e) {
