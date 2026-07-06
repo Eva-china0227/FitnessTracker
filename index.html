@@ -344,7 +344,7 @@
     position: relative;
     transition: all 0.2s;
     color: #333;
-    padding: 2px 0;
+    padding: 2px 1px;
   }
 
   .day-cell:active { transform: scale(0.92); }
@@ -359,24 +359,23 @@
 
   .day-cell .day-num { line-height: 1; margin-bottom: 2px; font-size: 16px; }
 
-  .day-cell .muscle-dots {
+  .day-cell .muscle-labels {
     display: flex;
-    gap: 2px;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 95%;
-    min-height: 6px;
-    line-height: 0;
+    gap: 1px;
   }
 
-  .muscle-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
+  .muscle-label {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.1;
+    padding: 0 2px;
   }
 
-  .day-cell.checked .muscle-dot {
-    box-shadow: 0 0 3px rgba(255,255,255,0.6);
+  .day-cell.checked .muscle-label {
+    text-shadow: 0 0 2px rgba(0,0,0,0.3);
   }
 
   /* ===== 今日训练详情 ===== */
@@ -428,13 +427,13 @@
     border-color: transparent !important;
   }
 
-  .muscle-tag[data-tag="chest"].active { background: #FF6B6B !important; }
-  .muscle-tag[data-tag="back"].active { background: #4ECDC4 !important; }
-  .muscle-tag[data-tag="shoulder"].active { background: #FFE66D !important; }
-  .muscle-tag[data-tag="arm"].active { background: #95E1D3 !important; }
-  .muscle-tag[data-tag="leg"].active { background: #A06CD5 !important; }
-  .muscle-tag[data-tag="glute"].active { background: #F38181 !important; }
-  .muscle-tag[data-tag="core"].active { background: #FF9F43 !important; }
+  .muscle-tag[data-tag="chest"].active { background: #E91E63 !important; }
+  .muscle-tag[data-tag="back"].active { background: #10AC84 !important; }
+  .muscle-tag[data-tag="shoulder"].active { background: #FFA502 !important; }
+  .muscle-tag[data-tag="arm"].active { background: #3742FA !important; }
+  .muscle-tag[data-tag="leg"].active { background: #A55EEA !important; }
+  .muscle-tag[data-tag="glute"].active { background: #F368E0 !important; }
+  .muscle-tag[data-tag="core"].active { background: #00BCD4 !important; }
 
   .muscle-tag.active .tag-dot {
     box-shadow: 0 0 0 2px white;
@@ -1465,13 +1464,13 @@
           </div>
         </div>
         <div class="legend" id="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#FF6B6B"></div>胸</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#4ECDC4"></div>背</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#FFE66D"></div>肩</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#95E1D3"></div>臂</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#A06CD5"></div>腿</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#F38181"></div>臀</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#FF9F43"></div>核心</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#E91E63"></div>胸</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#10AC84"></div>背</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#FFA502"></div>肩</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#3742FA"></div>臂</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#A55EEA"></div>腿</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#F368E0"></div>臀</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#00BCD4"></div>核心</div>
           <div class="legend-item"><div class="legend-dot" style="background:#00B4D8"></div>有氧</div>
         </div>
         <div class="weekday-row">
@@ -1504,11 +1503,11 @@
 
         <div class="section-label mt-14">力量部位</div>
         <div class="tag-group" id="muscleTags">
-          <button class="muscle-tag" data-tag="chest" data-color="#FF4757">
-            <span class="tag-dot" style="background:#FF4757"></span>胸
+          <button class="muscle-tag" data-tag="chest" data-color="#E91E63">
+            <span class="tag-dot" style="background:#E91E63"></span>胸
           </button>
-          <button class="muscle-tag" data-tag="back" data-color="#2ED573">
-            <span class="tag-dot" style="background:#2ED573"></span>背
+          <button class="muscle-tag" data-tag="back" data-color="#10AC84">
+            <span class="tag-dot" style="background:#10AC84"></span>背
           </button>
           <button class="muscle-tag" data-tag="shoulder" data-color="#FFA502">
             <span class="tag-dot" style="background:#FFA502"></span>肩
@@ -1519,11 +1518,11 @@
           <button class="muscle-tag" data-tag="leg" data-color="#A55EEA">
             <span class="tag-dot" style="background:#A55EEA"></span>腿
           </button>
-          <button class="muscle-tag" data-tag="glute" data-color="#FF6B81">
-            <span class="tag-dot" style="background:#FF6B81"></span>臀
+          <button class="muscle-tag" data-tag="glute" data-color="#F368E0">
+            <span class="tag-dot" style="background:#F368E0"></span>臀
           </button>
-          <button class="muscle-tag" data-tag="core" data-color="#00D2D3">
-            <span class="tag-dot" style="background:#00D2D3"></span>核心
+          <button class="muscle-tag" data-tag="core" data-color="#00BCD4">
+            <span class="tag-dot" style="background:#00BCD4"></span>核心
           </button>
         </div>
 
@@ -1969,11 +1968,11 @@
 
       <div class="section-label mt-14" style="margin-bottom:6px;">力量部位</div>
       <div class="tag-group" id="editMuscleTags" style="margin-bottom:10px;">
-        <button class="muscle-tag" data-tag="chest" data-color="#FF4757" onclick="handleEditMuscle('chest')">
-          <span class="tag-dot" style="background:#FF4757"></span>胸
+        <button class="muscle-tag" data-tag="chest" data-color="#E91E63" onclick="handleEditMuscle('chest')">
+          <span class="tag-dot" style="background:#E91E63"></span>胸
         </button>
-        <button class="muscle-tag" data-tag="back" data-color="#2ED573" onclick="handleEditMuscle('back')">
-          <span class="tag-dot" style="background:#2ED573"></span>背
+        <button class="muscle-tag" data-tag="back" data-color="#10AC84" onclick="handleEditMuscle('back')">
+          <span class="tag-dot" style="background:#10AC84"></span>背
         </button>
         <button class="muscle-tag" data-tag="shoulder" data-color="#FFA502" onclick="handleEditMuscle('shoulder')">
           <span class="tag-dot" style="background:#FFA502"></span>肩
@@ -1984,11 +1983,11 @@
         <button class="muscle-tag" data-tag="leg" data-color="#A55EEA" onclick="handleEditMuscle('leg')">
           <span class="tag-dot" style="background:#A55EEA"></span>腿
         </button>
-        <button class="muscle-tag" data-tag="glute" data-color="#FF6B81" onclick="handleEditMuscle('glute')">
-          <span class="tag-dot" style="background:#FF6B81"></span>臀
+        <button class="muscle-tag" data-tag="glute" data-color="#F368E0" onclick="handleEditMuscle('glute')">
+          <span class="tag-dot" style="background:#F368E0"></span>臀
         </button>
-        <button class="muscle-tag" data-tag="core" data-color="#00D2D3" onclick="handleEditMuscle('core')">
-          <span class="tag-dot" style="background:#00D2D3"></span>核心
+        <button class="muscle-tag" data-tag="core" data-color="#00BCD4" onclick="handleEditMuscle('core')">
+          <span class="tag-dot" style="background:#00BCD4"></span>核心
         </button>
       </div>
 
@@ -2296,22 +2295,22 @@
   }
 
   var MUSCLE_MAP = {
-    chest:   { name: '胸',   color: '#FF4757' },  // 鲜红
-    back:    { name: '背',   color: '#2ED573' },  // 翠绿
+    chest:   { name: '胸',   color: '#E91E63' },  // 玫红
+    back:    { name: '背',   color: '#10AC84' },  // 深翠绿
     shoulder:{ name: '肩',   color: '#FFA502' },  // 橙黄
     arm:     { name: '臂',   color: '#3742FA' },  // 深蓝
     leg:     { name: '腿',   color: '#A55EEA' },  // 紫
-    glute:   { name: '臀',   color: '#FF6B81' },  // 玫瑰红
-    core:    { name: '核心', color: '#00D2D3' }   // 青蓝
+    glute:   { name: '臀',   color: '#F368E0' },  // 粉红
+    core:    { name: '核心', color: '#00BCD4' }   // 青色
   };
 
   var CARDIO_MAP = {
-    running: { name: '跑步', color: '#7BED9F' },    // 浅绿
-    swim:    { name: '游泳', color: '#70A1FF' },    // 蓝
-    cycle:   { name: '骑行', color: '#FF7F50' },    // 珊瑚
-    hiit:    { name: 'HIIT', color: '#FF6B6B' },    // 红
-    jump:    { name: '跳绳', color: '#ECCC68' },    // 金黄
-    elliptical: { name: '椭圆机', color: '#A4B0BE' } // 灰蓝
+    running:    { name: '跑步',   color: '#54A0FF' },  // 天蓝
+    swim:       { name: '游泳',   color: '#1DD1A1' },  // 碧绿
+    cycle:      { name: '骑行',   color: '#FECA57' },  // 金黄
+    hiit:       { name: 'HIIT',   color: '#FF6B6B' },  // 浅红
+    jump:       { name: '跳绳',   color: '#48DBFB' },  // 青蓝
+    elliptical: { name: '椭圆机', color: '#A4B0BE' }   // 灰
   };
 
   var MUSCLE_ORDER = ['chest', 'back', 'shoulder', 'arm', 'leg', 'glute', 'core'];
@@ -2528,7 +2527,7 @@
       var prevD = prevLast - i;
       var prevDateObj = new Date(viewYear, viewMonth - 1, prevD);
       var prevDateKey = formatDateKey(prevDateObj);
-      cell.innerHTML = '<div class="day-num">' + prevD + '</div><div class="muscle-dots"></div>';
+      cell.innerHTML = '<div class="day-num">' + prevD + '</div><div class="muscle-labels"></div>';
       (function(dk, dobj) {
         cell.addEventListener('click', function() { showDetail(dk, dobj); });
       })(prevDateKey, prevDateObj);
@@ -2546,15 +2545,16 @@
       if (record && record.checked) cell.classList.add('checked');
 
       var muscles = getDayMuscles(record);
-      var dots = '<div class="muscle-dots">';
-      var displayMuscles = muscles.slice(0, 4);
+      var labelHtml = '<div class="muscle-labels">';
+      var displayMuscles = muscles.slice(0, 3);
       for (var m = 0; m < displayMuscles.length; m++) {
         var color = displayMuscles[m] === 'cardio' ? '#00B4D8' : MUSCLE_MAP[displayMuscles[m]].color;
-        dots += '<div class="muscle-dot" style="background:' + color + '"></div>';
+        var name = displayMuscles[m] === 'cardio' ? '有氧' : MUSCLE_MAP[displayMuscles[m]].name;
+        labelHtml += '<span class="muscle-label" style="color:' + color + '">' + name + '</span>';
       }
-      dots += '</div>';
+      labelHtml += '</div>';
 
-      cell.innerHTML = '<div class="day-num">' + d + '</div>' + dots;
+      cell.innerHTML = '<div class="day-num">' + d + '</div>' + labelHtml;
 
       (function(dk, dobj) {
         cell.addEventListener('click', function() { showDetail(dk, dobj); });
@@ -2570,7 +2570,7 @@
       c2.className = 'day-cell other-month';
       var nextDateObj = new Date(viewYear, viewMonth + 1, j);
       var nextDateKey = formatDateKey(nextDateObj);
-      c2.innerHTML = '<div class="day-num">' + j + '</div><div class="muscle-dots"></div>';
+      c2.innerHTML = '<div class="day-num">' + j + '</div><div class="muscle-labels"></div>';
       (function(dk, dobj) {
         c2.addEventListener('click', function() { showDetail(dk, dobj); });
       })(nextDateKey, nextDateObj);
@@ -3568,39 +3568,6 @@
     editSelectedMuscles = [];
     editSelectedCardio = [];
     editExercises = [];
-  }
-
-  function updateEditMuscleTags() {
-    var tags = document.querySelectorAll('#editMuscleTags .muscle-tag');
-    for (var i = 0; i < tags.length; i++) {
-      var t = tags[i];
-      var key = t.getAttribute('data-tag');
-      var color = t.getAttribute('data-color');
-      if (editSelectedMuscles.indexOf(key) >= 0) {
-        t.classList.add('active');
-        t.style.background = color;
-        t.style.color = 'white';
-        t.style.borderColor = color;
-      } else {
-        t.classList.remove('active');
-        t.style.background = '#F5F5F5';
-        t.style.color = '#555';
-        t.style.borderColor = 'transparent';
-      }
-    }
-  }
-
-  function updateEditCardioTags() {
-    var tags = document.querySelectorAll('#editCardioTags .cardio-tag');
-    for (var i = 0; i < tags.length; i++) {
-      var t = tags[i];
-      var key = t.getAttribute('data-tag');
-      if (editSelectedCardio.indexOf(key) >= 0) {
-        t.classList.add('active');
-      } else {
-        t.classList.remove('active');
-      }
-    }
   }
 
   function saveEditRecord() {
