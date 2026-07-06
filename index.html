@@ -351,11 +351,12 @@
   .day-cell.other-month { color: #E0E0E0; }
   .day-cell.today { background: #E8EEFF; color: #4A6CF7; font-weight: 600; }
   .day-cell.checked {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #F0F4F8 0%, #E3EAF3 100%);
+    color: #4A5568;
     font-weight: 600;
+    box-shadow: inset 0 0 0 1px rgba(102, 126, 234, 0.18);
   }
-  .day-cell.checked.today { box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3); }
+  .day-cell.checked.today { box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.22); }
 
   .day-cell .day-num { line-height: 1; margin-bottom: 2px; font-size: 16px; }
 
@@ -375,7 +376,7 @@
   }
 
   .day-cell.checked .muscle-label {
-    text-shadow: 0 0 2px rgba(0,0,0,0.3);
+    font-weight: 700;
   }
 
   /* ===== 今日训练详情 ===== */
@@ -429,11 +430,11 @@
 
   .muscle-tag[data-tag="chest"].active { background: #E74C3C !important; }
   .muscle-tag[data-tag="back"].active { background: #3498DB !important; }
-  .muscle-tag[data-tag="shoulder"].active { background: #F39C12 !important; }
+  .muscle-tag[data-tag="shoulder"].active { background: #F1C40F !important; }
   .muscle-tag[data-tag="arm"].active { background: #9B59B6 !important; }
-  .muscle-tag[data-tag="leg"].active { background: #1ABC9C !important; }
+  .muscle-tag[data-tag="leg"].active { background: #27AE60 !important; }
   .muscle-tag[data-tag="glute"].active { background: #F368E0 !important; }
-  .muscle-tag[data-tag="core"].active { background: #FF5722 !important; }
+  .muscle-tag[data-tag="core"].active { background: #E67E22 !important; }
 
   .muscle-tag.active .tag-dot {
     box-shadow: 0 0 0 2px white;
@@ -1466,11 +1467,11 @@
         <div class="legend" id="legend">
           <div class="legend-item"><div class="legend-dot" style="background:#E74C3C"></div>胸</div>
           <div class="legend-item"><div class="legend-dot" style="background:#3498DB"></div>背</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#F39C12"></div>肩</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#F1C40F"></div>肩</div>
           <div class="legend-item"><div class="legend-dot" style="background:#9B59B6"></div>臂</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#1ABC9C"></div>腿</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#27AE60"></div>腿</div>
           <div class="legend-item"><div class="legend-dot" style="background:#F368E0"></div>臀</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#FF5722"></div>核心</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#E67E22"></div>核心</div>
           <div class="legend-item"><div class="legend-dot" style="background:#00B4D8"></div>有氧</div>
         </div>
         <div class="weekday-row">
@@ -1509,20 +1510,20 @@
           <button class="muscle-tag" data-tag="back" data-color="#3498DB">
             <span class="tag-dot" style="background:#3498DB"></span>背
           </button>
-          <button class="muscle-tag" data-tag="shoulder" data-color="#F39C12">
-            <span class="tag-dot" style="background:#F39C12"></span>肩
+          <button class="muscle-tag" data-tag="shoulder" data-color="#F1C40F">
+            <span class="tag-dot" style="background:#F1C40F"></span>肩
           </button>
           <button class="muscle-tag" data-tag="arm" data-color="#9B59B6">
             <span class="tag-dot" style="background:#9B59B6"></span>臂
           </button>
-          <button class="muscle-tag" data-tag="leg" data-color="#1ABC9C">
-            <span class="tag-dot" style="background:#1ABC9C"></span>腿
+          <button class="muscle-tag" data-tag="leg" data-color="#27AE60">
+            <span class="tag-dot" style="background:#27AE60"></span>腿
           </button>
           <button class="muscle-tag" data-tag="glute" data-color="#F368E0">
             <span class="tag-dot" style="background:#F368E0"></span>臀
           </button>
-          <button class="muscle-tag" data-tag="core" data-color="#FF5722">
-            <span class="tag-dot" style="background:#FF5722"></span>核心
+          <button class="muscle-tag" data-tag="core" data-color="#E67E22">
+            <span class="tag-dot" style="background:#E67E22"></span>核心
           </button>
         </div>
 
@@ -1974,20 +1975,20 @@
         <button class="muscle-tag" data-tag="back" data-color="#3498DB" onclick="handleEditMuscle('back')">
           <span class="tag-dot" style="background:#3498DB"></span>背
         </button>
-        <button class="muscle-tag" data-tag="shoulder" data-color="#F39C12" onclick="handleEditMuscle('shoulder')">
-          <span class="tag-dot" style="background:#F39C12"></span>肩
+        <button class="muscle-tag" data-tag="shoulder" data-color="#F1C40F" onclick="handleEditMuscle('shoulder')">
+          <span class="tag-dot" style="background:#F1C40F"></span>肩
         </button>
         <button class="muscle-tag" data-tag="arm" data-color="#9B59B6" onclick="handleEditMuscle('arm')">
           <span class="tag-dot" style="background:#9B59B6"></span>臂
         </button>
-        <button class="muscle-tag" data-tag="leg" data-color="#1ABC9C" onclick="handleEditMuscle('leg')">
-          <span class="tag-dot" style="background:#1ABC9C"></span>腿
+        <button class="muscle-tag" data-tag="leg" data-color="#27AE60" onclick="handleEditMuscle('leg')">
+          <span class="tag-dot" style="background:#27AE60"></span>腿
         </button>
         <button class="muscle-tag" data-tag="glute" data-color="#F368E0" onclick="handleEditMuscle('glute')">
           <span class="tag-dot" style="background:#F368E0"></span>臀
         </button>
-        <button class="muscle-tag" data-tag="core" data-color="#FF5722" onclick="handleEditMuscle('core')">
-          <span class="tag-dot" style="background:#FF5722"></span>核心
+        <button class="muscle-tag" data-tag="core" data-color="#E67E22" onclick="handleEditMuscle('core')">
+          <span class="tag-dot" style="background:#E67E22"></span>核心
         </button>
       </div>
 
@@ -2297,11 +2298,11 @@
   var MUSCLE_MAP = {
     chest:   { name: '胸',   color: '#E74C3C' },  // 玫红
     back:    { name: '背',   color: '#3498DB' },  // 深翠绿
-    shoulder:{ name: '肩',   color: '#F39C12' },  // 橙黄
+    shoulder:{ name: '肩',   color: '#F1C40F' },  // 橙黄
     arm:     { name: '臂',   color: '#9B59B6' },  // 深蓝
-    leg:     { name: '腿',   color: '#1ABC9C' },  // 紫
+    leg:     { name: '腿',   color: '#27AE60' },  // 紫
     glute:   { name: '臀',   color: '#F368E0' },  // 粉红
-    core:    { name: '核心', color: '#FF5722' }   // 青色
+    core:    { name: '核心', color: '#E67E22' }   // 青色
   };
 
   var CARDIO_MAP = {
